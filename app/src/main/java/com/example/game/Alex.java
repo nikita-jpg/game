@@ -25,8 +25,6 @@ public class Alex extends Person {
 
     HashMap<String,Integer> dictionary = new HashMap<String, Integer>();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,14 +1,6 @@
 package com.example.game;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import java.util.HashMap;
 
@@ -42,11 +34,11 @@ public class Malvina extends Person {
         String result="";
         switch (name){
             case"m_4_3": // оружие достаётся Саше
-                al.setWeapon(true);
                 result="@7@1@";
                 break;
             case "m_6_2":
                 this.weapon=true;
+                MainActivity.firstWeapon =false;
                 result = "@7@1@";
                 break;
             case "m_7_2":

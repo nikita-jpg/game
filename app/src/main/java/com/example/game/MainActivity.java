@@ -1,9 +1,12 @@
 package com.example.game;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -18,8 +21,8 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView malvinaText;
-    Intent intent;
+
+    public static boolean firstWeapon =true;
 
     private String firstLet = "m_";
     private int str = 2;
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public Button butL;
     public Button butR;
 
+    private TextView scrollText;
+    private TextView dialogTitle;
+    private LinearLayout dialog_Lay;
     private LinearLayout main_Layout;
     private LinearLayout.LayoutParams messegeParams;
     private LinearLayout.LayoutParams main_Btn_Params;
@@ -43,6 +49,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Malvina mal;
     Alex al;
+    protected Dialog onCreateDialog(int id) {
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setTitle("Custom dialog");
+        // создаем view из dialog.xml
+        dialog_Lay = (LinearLayout) getLayoutInflater()
+                .inflate(R.layout.dialog, null);
+        // устанавливаем ее, как содержимое тела диалога
+        adb.setView(dialog_Lay);
+        // находим TexView для отображения кол-ва
+        scrollText = (TextView) dialog_Lay.findViewById(R.id.scrollText);
+        dialogTitle = (TextView) dialog_Lay.findViewById(R.id.dialogTitle);
+        return adb.create();
+    }
+    private void DialogKreater(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Важное сообщение!")
+                .setMessage("Играем за Мальвину")
+                .setIcon(R.drawable.dialog)
+                .setCancelable(false)
+                .setNegativeButton("ОК",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -67,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         al=new Alex();
         kolDialogs=malKolDialog;
         DictionaryMaker();
+        DialogKreater();
         Dialog();
     }
     private String TekString(){
@@ -113,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dictionary.put("m_17_1", R.string.m_17_1);
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    public void MessegeMaker(String tekDialog) {
+    private void MessegeMaker(String tekDialog) {
         TextView newText = new TextView(this);
         newText.setBackground(ContextCompat.getDrawable(this,R.drawable.messege));
         newText.setTextColor(Color.parseColor("#e3e4e8"));
@@ -125,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void CreaterButton() {
+    private void CreaterButton() {
         Button main_Btn_1 = new Button(this);
         Button main_Btn_2 = new Button(this);
 
@@ -166,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void Dialog() {
+    private void Dialog() {
         while (str <= kolDialogs && TekString().indexOf('|') == -1) {
             MessegeMaker(StringCleaner());
             str++;
@@ -189,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }//Если перескоко
         }
     }
-    public String Ivent() {
+    private String Ivent() {
         String name = firstLet + String.valueOf(str) + "_" + String.valueOf(stl);
         String result="";
         switch (name.charAt(0)){
@@ -210,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return result;
     }
 
-    public void Quantity(String tekDIalog) {
+    private void Quantity(String tekDIalog) {
         String c = "";
         if(tekDIalog.indexOf('@')!=-1) {
             int i = 0;
