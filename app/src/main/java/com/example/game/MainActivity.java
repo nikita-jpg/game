@@ -110,8 +110,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dictionary.put("m_16_1", R.string.m_16_1);
         dictionary.put("m_17_1", R.string.m_17_1);
     }
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void MessegeMaker(String tekDialog) {
         TextView newText = new TextView(this);
+        newText.setBackground(ContextCompat.getDrawable(this,R.drawable.messege));
+        newText.setTextColor(Color.parseColor("#e3e4e8"));
         newText.setText(tekDialog);
         main_Layout.addView(newText, messegeParams);
     }
