@@ -53,10 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         main_Layout = findViewById(R.id.main_Lay);
         messegeParams = new LinearLayout.LayoutParams(650, ViewGroup.LayoutParams.MATCH_PARENT);
         messegeParams.gravity = Gravity.RIGHT;
+        messegeParams.setMargins(0,20,0,20);
+
 
         main_Btn_Params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         main_Btn_Params.gravity = Gravity.CENTER;
-        main_Btn_Params.setMargins(10, 0, 10, 0);
+        main_Btn_Params.setMargins(10, 20, 10, 20);
         main_Btn_Params.weight = 1;
 
         main_Btn_Lay_Par = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -115,6 +117,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView newText = new TextView(this);
         newText.setBackground(ContextCompat.getDrawable(this,R.drawable.messege));
         newText.setTextColor(Color.parseColor("#e3e4e8"));
+
+        newText.setGravity(Gravity.CENTER);
+        newText.setPadding(10,5,10,5);
         newText.setText(tekDialog);
         main_Layout.addView(newText, messegeParams);
     }
