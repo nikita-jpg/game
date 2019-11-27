@@ -33,6 +33,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Button" />
+        android:text="Button"
+        android:background="@drawable/btn_do_click"/>
 
 </LinearLayout>

@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static boolean firstWeapon =true;
 
@@ -49,9 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Malvina mal;
     Alex al;
-    protected Dialog onCreateDialog(int id) {
+    protected void DialogAl () {
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        adb.setTitle("Custom dialog");
         // создаем view из dialog.xml
         dialog_Lay = (LinearLayout) getLayoutInflater()
                 .inflate(R.layout.dialog, null);
@@ -59,8 +58,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adb.setView(dialog_Lay);
         // находим TexView для отображения кол-ва
         scrollText = (TextView) dialog_Lay.findViewById(R.id.scrollText);
+        scrollText.setText("123");
         dialogTitle = (TextView) dialog_Lay.findViewById(R.id.dialogTitle);
-        return adb.create();
+        dialogTitle.setText("123");
+        adb.setNegativeButton("ОК",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        adb.show();
     }
     private void DialogKreater(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -101,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         al=new Alex();
         kolDialogs=malKolDialog;
         DictionaryMaker();
-        DialogKreater();
         Dialog();
     }
     private String TekString(){
