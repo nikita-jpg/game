@@ -2,18 +2,15 @@ package com.example.game;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -123,6 +120,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void CreaterButton() {
         Button main_Btn_1 = new Button(this);
         Button main_Btn_2 = new Button(this);
+
+        main_Btn_1.setBackground(ContextCompat.getDrawable(this,R.drawable.btn_do_click));
+        main_Btn_2.setBackground(ContextCompat.getDrawable(this,R.drawable.btn_do_click));
+
         LinearLayout main_BtnLay = new LinearLayout(this);
         main_BtnLay.setOrientation(LinearLayout.HORIZONTAL);
         String leftBtn;
@@ -217,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View v) {
         switch (v.getId()){
