@@ -139,7 +139,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         main_Btn_1.setText(leftBtn);
+        main_Btn_1.setTextColor(Color.parseColor("#e0e1e5"));
         main_Btn_2.setText(rightBtn);
+        main_Btn_2.setTextColor(Color.parseColor("#e0e1e5"));
 
         main_Btn_1.setOnClickListener(this);
         main_Btn_2.setOnClickListener(this);
@@ -224,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case a:
                 str++;
-                butL.setBackgroundColor(Color.BLUE);
+                butL.setBackground(ContextCompat.getDrawable(this,R.drawable.btn_posle_click));
                 butL.setEnabled(false);
                 butR.setEnabled(false);
                 if(TekString().indexOf('|')==-1)
@@ -236,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case b:
                 stl++;
-                butR.setBackgroundColor(Color.BLUE);
+                butR.setBackground(ContextCompat.getDrawable(this,R.drawable.btn_posle_click));
                 butL.setEnabled(false);
                 butR.setEnabled(false);
                 if(TekString().indexOf('|')==-1)
