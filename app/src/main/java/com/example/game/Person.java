@@ -7,9 +7,7 @@ public abstract class Person extends AppCompatActivity {
     public final int  age=0;
 
 
-    public  abstract String Dialog();
-    public  abstract String MessegeMaker(int tekDialog);
-    public abstract void CreaterButton(int a,int b);
-
+    public abstract String Ivent(int str,int stl,Malvina mal,Alex al);
+    public abstract void DictionaryMaker();
 
 }

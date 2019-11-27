@@ -9,10 +9,16 @@
 
     >
 
-    <TextView
-        android:id="@+id/malvina"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:text="Malvina"
-        android:clickable="true"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_Lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom">
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
