@@ -1,3 +1,48 @@
 <resources>
     <string name="app_name">Game</string>
+    <string name="m_2_1">Что произошло, где я?
+ Помню только что шла по улице
+и на меня накинулись
+какие-то мужчины в масках.
+|*&amp;*</string>
+    <string name="m_2_2">Успокойся и осмотрись</string>
+
+    <string name="m_3_1">Кричи!!!  |@7@1@**</string>
+    <string name="m_3_2">Кажется я в какой-то
+пещере. Связи нет.
+Странно,но с тобой я общаться могу.</string>
+    <string name="m_4_2">Так,  ладно, давай помогай.
+Я вижу проход вперёд, правда там темно.
+Что делать? |*&amp;*</string>
+
+    <string name="m_4_3">Оставайся и жди. |@7@1@**</string>
+    <string name="m_5_2">Иди туда</string>
+
+    <string name="m_6_2">ак, вижу рюкзак. Подхожу.
+Оооо. Пистолет. |@7@1@*I</string>
+    <string name="m_7_1">Я слышу лай собаки
+за поворотом.
+|*&amp;*</string>
+    <string name="m_7_2">Стою и жду  |**I</string>
+    <string name="m_8_1">Иду на лай |**I</string>
+    <string name="m_8_3">**Крики** |@10@1@**</string>
+    <string name="m_9_1">**Звуки выстрелов**</string>
+    <string name="m_10_1">Потеря сигнала.</string>
+    <string name="m_11_1">**Прошло 3 часа**</string>
+    <string name="m_12_1">Эй эй !!
+Ты тут?
+На менянабросилась собака |**I </string>
+    <string name="m_12_2">К счастью пистолет меня спас.
+|@14@1**</string>
+    <string name="m_13_1"> Я взяла лежащий рядом камень,
+правда он всё равно меня ранил</string>
+    <string name="m_14_1">А потом я провалилась в
+какой-то проход.
+|*&amp;*</string>
+    <string name="m_14_2">Осмотрись</string>
+    <string name="m_15_1">Успокойся и осмотрись</string>
+    <string name="m_15_2">Хоть бы одно слово поддержки!!!
+|**I</string>
+    <string name="m_16_1">Так,я вижу свет</string>
+    <string name="m_17_1">**Спасение**</string>
 </resources>
